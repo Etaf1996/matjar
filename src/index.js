@@ -1,10 +1,14 @@
-//import 'bootstrap/dist/css/bootstrap.min.css';
-import '@laylazi/bootstrap-rtl/dist/css/bootstrap-rtl.min.css';
+///import '@laylazi/bootstrap-rtl-scss/dist/css/bootstrap-rtl.min.css';
+//import '@laylazi/bootstrap-rtl/dist/css/bootstrap-rtl.min.css';
+import './scss/style.scss';
 import './css/style.css';
 import 'jquery/dist/jquery.min';
 import 'popper.js/dist/popper.min';
 import '@fortawesome/fontawesome-free/js/all.min';
 import 'bootstrap';
+import 'webpack-jquery-ui';
+import 'webpack-jquery-ui/css';
+import 'jquery-ui-touch-punch/jquery.ui.touch-punch.min.js';
 
 $(function(){
     $('[data-toggle="tooltip"]').tooltip();
@@ -44,7 +48,7 @@ var totalPriceForProduct = pricePerUnit * quantity;
 // سعر الاجمالي للمنتجات كلها عن طريق السعر الاجمالي للمنتج +سعر المنتجات كلها التى قيمتها الافتراضية =0
 // totalPriceForAll = totalPriceForAll + totalPriceForProduct;
 totalPriceForAll+= totalPriceForProduct;
-$("#total-price-for-all").text(totalPriceForAll + "$");
+$("#total-price-for-all-products").text(totalPriceForAll + "$");
 
 });
 }
@@ -97,7 +101,7 @@ $("#form-checkout select[name = 'country']").change(function() {
     $("#credit-card-info").toggle();
 
   });
-  $( "#price-range" ).slider({
+  $("#price-range").slider({
     range: true,
     min: 50,
     max: 1000,
